@@ -42,7 +42,7 @@ Create a third variable, myGreeting, that concatenates the two strings
  */
 //SOLUTION
 let name = "Allen";
-let greeting = "Hi, my nsme is";
+let greeting = "Hi, my name is";
 
 let myGreeting = greeting + " " + name + ".";
 
