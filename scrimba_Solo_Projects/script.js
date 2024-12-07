@@ -14,8 +14,13 @@ const guestScore1 = document.getElementById("guest-score1");
 const guestScore2 = document.getElementById("guest-score2");
 const guestScore3 = document.getElementById("guest-score3");
 
+const gameClock = document.getElementById("game-clock");
+
 let homeScoreBoard = 0;
 let guestScoreBoard = 0;
+
+const startingMinutes = 12;
+let time = startingMinutes * 60;
 
 /**
  * @param {Pseudo Code}
@@ -81,3 +86,30 @@ function highlightLeader() {
   }
 }
 document.addEventListener("click", highlightLeader);
+
+/**DEC 7th 2024
+ * function and logic that updates and countdown the game clock dynamically.
+ * NB: Setting interval using seconds should be in mm seconds i.e 1000 mm = 1 second.
+ * @param {A named function like updateCountdown }in tandem with setInterval function() is easy to identify, reusable in other parts of the code, easier to debug with clear stack traces, and helps organize complex logic effectively.
+ */
+
+setInterval(updateCountdown, 1000);
+function updateCountdown() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  seconds = seconds < 1 ? "0" : seconds;
+  gameClock.textContent = `${minutes}:${seconds}`;
+  time--;
+}
+/**
+ * @param {Updating the countdown with setInterval anonymous function},is best for smaller code base like this scoreboard project, because it reduces extra line of code for small, non-reusable tasks, and can avoid adding extra global identifiers.*/
+
+setInterval(() => {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  //Adds  ZERO (0) to each seconds once seconds is less than ten (10)
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  gameClock.textContent = `${minutes}:${seconds}`;
+  time--;
+}, 1000);
