@@ -2,7 +2,7 @@
 
 body {
   /* margin: 0; */
-  background-image: url(basketball\ image.jpg);
+  background-image: url("assets/basketball image.jpg");
   height: 100%;
   background-size: cover no-repeat;
 }

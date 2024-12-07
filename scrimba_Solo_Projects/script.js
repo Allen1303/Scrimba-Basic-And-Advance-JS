@@ -19,8 +19,6 @@ const gameClock = document.getElementById("game-clock");
 let homeScoreBoard = 0;
 let guestScoreBoard = 0;
 
-const startingMinutes = 12;
-let time = startingMinutes * 60;
 
 /**
  * @param {Pseudo Code}
@@ -93,14 +91,17 @@ document.addEventListener("click", highlightLeader);
  * @param {A named function like updateCountdown }in tandem with setInterval function() is easy to identify, reusable in other parts of the code, easier to debug with clear stack traces, and helps organize complex logic effectively.
  */
 
-setInterval(updateCountdown, 1000);
-function updateCountdown() {
-  const minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-  seconds = seconds < 1 ? "0" : seconds;
-  gameClock.textContent = `${minutes}:${seconds}`;
-  time--;
-}
+const startingMinutes = 12;
+let time = startingMinutes * 60;
+
+// setInterval(updateCountdown, 1000);
+// function updateCountdown() {
+//   const minutes = Math.floor(time / 60);
+//   let seconds = time % 60;
+//   seconds = seconds < 10 ? "0" + seconds : seconds
+//   gameClock.textContent = `${minutes}:${seconds}`;
+//   time--;
+// }
 /**
  * @param {Updating the countdown with setInterval anonymous function},is best for smaller code base like this scoreboard project, because it reduces extra line of code for small, non-reusable tasks, and can avoid adding extra global identifiers.*/
 
