@@ -8,34 +8,35 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <div class="clock-container">
         <p id="game-clock">12:00</p>
       </div>
-      <div>
-       
-        <h3 id="home">HOME</h3>
+      <!-- Home Team Section -->
+      <section>
+        <h3 id="home" data-team="home">HOME</h3>
         <div class="score-container">
-          <p id="home-score">0</p>
+          <p id="home-score" data-score="0">0</p>
         </div>
-        <div class="button-container">
-          <button id="home-score1">+1</button
-          ><button id="home-score2">+2</button
-          ><button id="home-score3">+3</button>
+        <div class="button-container" data-team="home">
+          <button data-home-pts="1">+1</button
+          ><button data-home-pts="2">+2</button
+          ><button data-home-pts="3">+3</button>
         </div>
-      </div>
-      <div>
-        <h3 id="guest">GUEST</h3>
+      </section>
+      <!-- Guest section -->
+      <section>
+        <h3 id="guest" data-team="guest">GUEST</h3>
         <div class="score-container">
-          <p id="guest-score">0</p>
+          <p id="guest-score" data-score="0">0</p>
         </div>
-        <div class="button-container">
-          <button id="guest-score1">+1</button
-          ><button id="guest-score2">+2</button
-          ><button id="guest-score3">+3</button>
+        <div class="button-container" data-team="guest">
+          <button data-guest-pts="1">+1</button
+          ><button data-guest-pts="2">+2</button
+          ><button data-guest-pts="3">+3</button>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

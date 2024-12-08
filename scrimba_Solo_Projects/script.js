@@ -5,15 +5,7 @@ const guest = document.getElementById("guest");
 
 const homeScore = document.getElementById("home-score");
 const guestScore = document.getElementById("guest-score");
-
-const homeScore1 = document.getElementById("home-score1");
-const homeScore2 = document.getElementById("home-score2");
-const homeScore3 = document.getElementById("home-score3");
-
-const guestScore1 = document.getElementById("guest-score1");
-const guestScore2 = document.getElementById("guest-score2");
-const guestScore3 = document.getElementById("guest-score3");
-
+const container = document.querySelector(".container")
 const gameClock = document.getElementById("game-clock");
 
 let homeScoreBoard = 0;
@@ -31,15 +23,10 @@ function updateScore(team, increment) {
   highlightLeader();
 }
 //Event Listener for the home buttons using callback functionality
-homeScore1.addEventListener("click", () => updateScore(home, 1));
-homeScore2.addEventListener("click", () => updateScore(home, 2));
-homeScore3.addEventListener("click", () => updateScore(home, 3));
-
-//Event Listener for the guest buttons using callback functionality
-guestScore1.addEventListener("click", () => updateScore(guest, 1));
-guestScore2.addEventListener("click", () => updateScore(guest, 2));
-guestScore3.addEventListener("click", () => updateScore(guest, 3));
-
+container.addEventListener("click", (event)=>{
+  const button = event.target;
+  const buttonContainer = button
+})
 //function logic that highlights the leader of the game by checking the highest score
 
 function highlightLeader() {
