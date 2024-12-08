@@ -57,18 +57,19 @@ function highlightLeader() {
   }
 }
 
- // function and logic that updates and countdown the game clock dynamically.
+// function and logic that updates and countdown the game clock dynamically.
 
-function gameClockCounter(initialMinutes) {
+function countdownTimer(initialMinutes) {
   let time = initialMinutes * 60;
   setInterval(() => {
+    //calculates the number of full minutes remaining by dividing the total time (in seconds) by 60
     const minutes = Math.floor(time / 60);
     let seconds = time % 60;
-    //Adds  ZERO (0) to each seconds once seconds is less than ten (10)
+    //that the seconds are always displayed as two digits. If the seconds are less than 10, a leading zero is added
     seconds = seconds < 10 ? "0" + seconds : seconds;
-
+    //This line updates the text content of an HTML element  with ID gameClock
     gameClock.textContent = `${minutes}:${seconds}`;
     if (time > 0) time--;
   }, 1000);
 }
-gameClockCounter(12);
+countdownTimer(12);
