@@ -32,7 +32,7 @@ body {
   background-color: #080001;
   color: #f94f6d;
   font-size: 3rem;
-  font-family:"Cursed Timer ULiL" ;
+  font-family: "Cursed Timer ULiL";
   border-radius: 0.5rem;
   box-shadow: 0.25rem 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.3);
 }
@@ -91,4 +91,12 @@ button {
   margin: 22% 0 0 0.7rem;
   cursor: pointer;
   box-shadow: 4px 4px 4px #586075;
+}
+/* Add this to your CSS file */
+.leader {
+  color: #73dd73;
+  text-shadow: 2px 2px 2px #73dd73; /* Highlight color */
+
+  /* border-radius: 5px;  */
+  /* padding: 0.8rem; */
 }
