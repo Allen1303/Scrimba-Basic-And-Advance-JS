@@ -5,28 +5,29 @@ const guest = document.getElementById("guest");
 
 const homeScore = document.getElementById("home-score");
 const guestScore = document.getElementById("guest-score");
-const container = document.querySelector(".container")
+const container = document.querySelector(".container");
 const gameClock = document.getElementById("game-clock");
 
 let homeScoreBoard = 0;
 let guestScoreBoard = 0;
 
-//Function to update both the Home and Guest scores
-function updateScore(team, increment) {
-  if (team === home) {
-    homeScoreBoard += increment;
+//Event Listener for the home buttons using callback functionality
+container.addEventListener("click", (event) => {
+  const targeButton = event.target;
+  const homePts = targeButton.dataset.homePts;
+  const guestPts = targeButton.dataset.guestPts;
+
+  //Conditional to check which Team points to update
+  if (homePts) {
+    homeScoreBoard += Number(homePts);
     homeScore.textContent = homeScoreBoard;
-  } else if (team === guest) guestScoreBoard += increment;
-  guestScore.textContent = guestScoreBoard;
-  {
+  }
+  if (guestPts) {
+    guestScoreBoard += Number(guestPts);
+    guestScore.textContent = guestScoreBoard;
   }
   highlightLeader();
-}
-//Event Listener for the home buttons using callback functionality
-container.addEventListener("click", (event)=>{
-  const button = event.target;
-  const buttonContainer = button
-})
+});
 //function logic that highlights the leader of the game by checking the highest score
 
 function highlightLeader() {
