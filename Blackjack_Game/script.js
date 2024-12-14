@@ -1,12 +1,12 @@
 "use strict";
-/**Blackjack Game Code Logic and Exercises */
+/**Blackjack Game Code Logic */
 // 1. Store the message-el paragraph in a variable called messageEl
 const messageEl = document.getElementById("message-el");
 const sumEl = document.querySelector("#sum-el");
-
 const cardsEl = document.getElementById("cards-el");
-let firstCard = 10;//TODO: Later to be dynamic value
-let secondCard = 11;//TODO: Later to be dynamic value
+
+let firstCard = 10;//TODO: Update later to dynamic value
+let secondCard = 11;//TODO: Update later to dynamic value
 let sum = firstCard + secondCard + 4;
 let hasBlackJack = false;
 let isAlive = true;
