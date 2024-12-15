@@ -1,7 +1,8 @@
 "use strict";
 // Check if the person is old enough to enter the nightclub (21)
 // Log a suitable message to the console in both cases
-//EXERCISE 1
+
+//EXERCISE 1 if Statements
 let age = 22;
 
 // if less than 21 -> "You can not enter the club!"
@@ -13,8 +14,8 @@ if (age < 21) {
   console.log("Welcome!");
 }
 
-//EXERCISE 2
-// Check if the person is elegible for a birthday card from the King! (100)
+//EXERCISE 2 if statements
+// Check if the person is eligible for a birthday card from the King! (100)
 
 let age2 = 100;
 
@@ -29,7 +30,7 @@ if (age2 < 100) {
 } else {
   console.log("Not eligible, you have already gotten one");
 }
-//EXERCISE 3
+//EXERCISE 3 Arrays
 
 // Create an array that lists your i.e. experience, education, licenses, skills or similar
 // The items of the array should be strings
@@ -41,7 +42,7 @@ let personalBio = [
 ];
 console.log(personalBio);
 
-//EXERCISE 4
+//EXERCISE 4 Arrays
 let experience = [
   "CEO at Scrimba",
   "Frontend developer at Xeneta",
@@ -55,6 +56,25 @@ let experience = [
 console.log(experience[1]);
 console.log(experience[2]);
 console.log(experience[0]);
+
+/**
+ * @param {Exercise 5 using the push() method on arrays}
+ * @param Task
+ * Push the newMessage to the messages array, and then log out the array
+*/
+
+let messages = [
+  "Hey, how's it going?",        
+  "I'm great, thank you! How about you?",
+  "All good. Been working on my portfolio lately."
+]
+
+let newMessage = "Same here!"
+//Solution
+messages.push(newMessage);
+
+console.log(messages);
+
 
 // 3. Log it out to check that you're doing it right
 //EXERCISE 6
