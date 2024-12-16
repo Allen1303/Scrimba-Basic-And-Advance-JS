@@ -1,25 +1,50 @@
 "use strict";
 /**Blackjack Game Code Logic */
 // 1. Store the message-el paragraph in a variable called messageEl
-const messageEl = document.getElementById("message-el");
-const sumEl = document.querySelector("#sum-el");
-const cardsEl = document.getElementById("cards-el");
+let messageEl = document.getElementById("message-el");
+let sumEl = document.getElementById("sum-el");
+let cardsEl = document.getElementById("cards-el");
+let playerEl = document.getElementById("player-el");
 
-let firstCard = 10; //TODO: Update later to dynamic value
-let secondCard = 11; //TODO: Update later to dynamic value
-let cards = [firstCard, secondCard];
-let sum = firstCard + secondCard + 4;
+const playerObj = {
+  name: "Allen",
+  chips: 150,
+};
+// playerEl.textContent = playerObj.name + ": $" + playerObj.chips;
+playerEl.textContent = `${playerObj.name}: $${playerObj.chips}`;
+let cards = [];
+let sum = 0;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message = "";
 
+function getRandomCard() {
+  let randomNumber = Math.ceil(Math.random() * 13);
+  if (randomNumber > 10) {
+    return 10;
+  } else if (randomNumber === 1) {
+    return 11;
+  } else {
+    return randomNumber;
+  }
+}
+
 function startGame() {
+  isAlive = true;
+  let firstCard = getRandomCard();
+  let secondCard = getRandomCard();
+  cards = [firstCard, secondCard];
+  sum = firstCard + secondCard;
   renderGame();
 }
-function renderGame() {
-  cardsEl.textContent = "Cards " +  cards[0] + " " + cards[1] ;
-  sumEl.textContent = " Sum: " + sum;
 
+function renderGame() {
+  cardsEl.textContent = "Cards: ";
+  for (let ii = 0; ii < cards.length; ii++) {
+    cardsEl.textContent += cards[ii] + " ";
+  }
+
+  sumEl.textContent = "Sum: " + sum;
   if (sum <= 20) {
     message = "Do you want to draw a new card?";
   } else if (sum === 21) {
@@ -31,10 +56,12 @@ function renderGame() {
   }
   messageEl.textContent = message;
 }
-function newCard() {
-  console.log("Drawing a new card from the deck!");
-  let card = 7; //TODO: Update Later to dynamic value
-  sum += card;
 
-  renderGame(); //TODO: Name Later
+function newCard() {
+  if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard();
+    sum += card;
+    cards.push(card);
+    renderGame();
+  }
 }
