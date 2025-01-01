@@ -1,14 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: "Permanent Marker", cursive; 
+      height: 100vh;
+      color: #e98a1d;
+    }
+    section{
+        max-width:800px;
+        min-height: 900px;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin: 10% auto;
+        font-size: 2rem;
+    }
+
+    h1 {
+      text-shadow: 0px 3px 0px black;
+      line-height: 24px;
+      transform: rotate(-9deg);
+    }
+
+    #stage {
+      width: 100%;
+      height: 60px;
+      padding: 30px 0;
+      font-size: 50px;
+      margin: 0;
+    }
+
+    button {
+      margin: 20px;
+      cursor: pointer;
+      border: 0;
+      padding: 8px 16px;
+      border-radius: 10px;
+      background: #e98a1d;
+      color: white;
+      font-family: inherit;
+      font-size: 20px;
+    }
+  </style>
+  <body>
     <main>
+      <header>
         <h1>JavaScript Exercises</h1>
+      </header>
+
+      <section>
+        <div>
+          <h1>Emoji<br /><br>Fighter</h1>
+          <div id="stage"></div>
+          <button id="fightButton">Pick Fighters!</button>
+        </div>
+      </section>
     </main>
     <script src="practice-part2.js" defer></script>
-</body>
+    <script src="emojifighter.js" defer></script>
+  </body>
 </html>
